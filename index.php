@@ -1,7 +1,10 @@
 <?php
 // see if the user is logged in
 if (isset($_SESSION['username'])){
-    header ("Location: loggedin.php");
+    $loggedin = $_SESSION['username'];
+}
+ else {
+     $loggedin = "no";
 }
 ?>
 <html>
@@ -41,11 +44,24 @@ if (isset($_SESSION['username'])){
                             <li><a href="#about">Wiki</a></li>
                             <li><a href="#contact">Forums</a></li>
                         </ul>
-                        <form class="navbar-form pull-right">
-                            <input class="span2" type="text" placeholder="Email">
-                            <input class="span2" type="password" placeholder="Password">
-                            <button type="submit" class="btn">Sign in</button>
-                        </form>
+                        <?php
+                        if($loggedin == "no"){
+                            ?>
+                            <form class="navbar-form pull-right">
+                                <input class="span2" type="text" placeholder="Email">
+                                <input class="span2" type="password" placeholder="Password">
+                                <button type="submit" class="btn">Sign in</button>
+                            </form>
+                            <?php
+                        }
+                        else{
+                            ?>
+                            <div class="pull-right">
+                                <p>Hello, <?php echo $loggedin ?></p>
+                            </div>
+                            <?php
+                        }
+                        ?>
                     </div><!--/.nav-collapse -->
                 </div>
             </div>
@@ -60,7 +76,7 @@ if (isset($_SESSION['username'])){
             </div>
 
             <!-- Example row of columns -->
-            <div class="row">
+            <div class="row-fluid">
                 <div class="span4">
                     <h2>Heading</h2>
                     <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
