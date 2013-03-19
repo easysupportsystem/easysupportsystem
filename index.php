@@ -14,14 +14,12 @@ if (isset($_SESSION['username'])){
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
-                    <div class="brand">
-                        Easy Support System
-                    </div>
-                    <div class="nav">
-                        <ul class="nav nav-collapse">
-                            <li class="active">Home</li>
-                        </ul>
-                    </div>
+                    <a class="brand" href="#">Title</a>
+                    <ul class="nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
