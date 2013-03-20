@@ -7,6 +7,19 @@ if (isset($_SESSION['username'])){
      $loggedin = "no";
 }
 ?>
+<?php
+if(isset($_POST['submit'])){
+    if (isset($_POST['email']) && isset($_POST['password'])){
+        echo "you filled in all the fields";
+    }
+    if(!isset($_POST['password'])){
+        echo "Please enter a password";
+    }
+    if(!isset($_POST['email'])){
+        echo "please enter an email";
+    }
+}
+?>
 <html>
     <head>
         <title>Easy Support System</title>
@@ -48,9 +61,9 @@ if (isset($_SESSION['username'])){
                         if($loggedin == "no"){
                             ?>
                             <form class="navbar-form pull-right">
-                                <input class="span2" type="text" placeholder="Email">
-                                <input class="span2" type="password" placeholder="Password">
-                                <button type="submit" class="btn">Sign in</button>
+                                <input name="email" class="span2" type="text" placeholder="Email">
+                                <input name="password" class="span2" type="password" placeholder="Password">
+                                <button name="submit" type="submit" class="btn">Sign in</button>
                             </form>
                             <?php
                         }
