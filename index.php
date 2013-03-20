@@ -1,9 +1,11 @@
 <?php
 // see if the user is logged in
 if (isset($_SESSION['username'])){
+    // if the user is logged in thn set the variable logged in to their username
     $loggedin = $_SESSION['username'];
 }
  else {
+     // if they are not logged in set the variable logged in to "no"
      $loggedin = "no";
 }
 ?>
@@ -22,11 +24,29 @@ if(isset($_POST['submit'])){
 ?>
 <html>
     <head>
+        <!-- set the page title -->
         <title>Easy Support System</title>
+        <!--------------------------------------------------------------------------------------------------->
+        <!-- INCLUDES
+        <!--------------------------------------------------------------------------------------------------->
+        <!-- include bootstrap responsive -->
+        
         <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css" />
+        
+        <!--        // include bootstrap normal-->
+        
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        
+        <!--// include bootstrap javascript-->
+        
         <script type="text/javascript" src="js/bootstrap.js"></script>
+        
+<!--        //-------------------------------------------------------------------------------------------------
+        // END INCLUDES
+        //--------------------------------------------------------------------------------------------------->
+        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
         <style type="text/css">
             body {
                 padding-top: 60px;
@@ -54,8 +74,8 @@ if(isset($_POST['submit'])){
                                     <li><a href="#">New</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#about">Wiki</a></li>
-                            <li><a href="#contact">Forums</a></li>
+                            <li><a href="#wiki">Wiki</a></li>
+                            <li><a href="#forums">Forums</a></li>
                         </ul>
                         <?php
                         if($loggedin == "no"){
@@ -83,7 +103,7 @@ if(isset($_POST['submit'])){
         <div class="container">
             <!-- Main hero unit for a primary marketing message or call to action -->
             <div class="hero-unit">
-                <h1>Heading Text</h1>
+                <h1>Easy Support System</h1>
                  <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
                  <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
             </div>
@@ -109,10 +129,12 @@ if(isset($_POST['submit'])){
 
             <hr>
 
+            <!--Start the fooer for copywrite notice-->
             <footer>
+                <!--write copywrite message-->
                 <p>&copy; Hann Web Design 2013</p>
             </footer>
-
+        <!--Include Javascript files at the bottom for improved performance-->
         </div> <!-- /container -->
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap-transition.js"></script>
